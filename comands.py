@@ -7,4 +7,23 @@
 Программа должна считывать размеры команд (два положительных целых числа aa и bb, каждое число вводится на отдельной строке) и выводить наименьшее число dd, которое делится на оба этих числа без остатка.
 '''
 
+
+# НОД
+def gcd(digit1, digit2):
+
+    while digit2 != 0:
+        remainder = digit1 % digit2
+        digit1 = digit2
+        digit2 = remainder
+
+    return digit1
+
+
+# НОК
+def lcm(digit1, digit2):
+    return int(digit1 * digit2 / gcd(digit1, digit2))
+
+
 team1, team2 = int(input()), int(input())
+
+print(lcm(team1, team2))
